@@ -10,9 +10,11 @@ use Math::BigInt;
 my $num = '3297';
 my $b36 = '2JL';
 
-ok(encode_base36($num) eq $b36);
-ok(decode_base36($b36) == $num);
-ok(decode_base36(encode_base36($num)) == $num);
-ok(decode_base36('ZZZZZZZZZZZZZZZZZZZZZZZZZ') == Math::BigInt->new( '808281277464764060643139600456536293375' ) );
-
+is( encode_base36( $num ),                  $b36, 'encode' );
+is( decode_base36( $b36 ),                  $num, 'decode' );
+is( decode_base36( encode_base36( $num ) ), $num, 'eat our own dogfood' );
+is( decode_base36( 'ZZZZZZZZZZZZZZZZZZZZZZZZZ' ),
+    Math::BigInt->new( '808281277464764060643139600456536293375' ),
+    'large number'
+);
 

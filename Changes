@@ -1,6 +1,8 @@
 Revision history for Perl extension Math::Base36.
 
 0.03  Fri Nov 30 2007
+    - fix tests by using Math::BigInt (RT #15712)
+    - fix return from decode_base36() (RT #18347, RT #15712)
     - switch to Module::Install
     - dist cleanup
 

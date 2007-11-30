@@ -1,0 +1,13 @@
+Revision history for Perl extension Math::Base36.
+
+0.03  Fri Nov 30 2007
+    - switch to Module::Install
+    - dist cleanup
+
+0.02  Sun Feb 17 2002
+	- Fixed a dependency error.
+
+0.01  Mon Feb  4 2002
+	- base36_encode and base36_decode work, and can be exported.
+
+

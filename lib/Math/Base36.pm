@@ -1,58 +1,51 @@
 package Math::Base36;
 
-require 5.005_62;
-
 use strict;
 use warnings;
-use Carp;
 
-require Exporter;
-use AutoLoader qw(AUTOLOAD);
+use base qw( Exporter );
 
-our @ISA = qw(Exporter);
+use Math::BigInt qw(:constant);
 
 our %EXPORT_TAGS = ( 'all' => [ qw(encode_base36 decode_base36) ] );
-
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
-our @EXPORT = qw( );
-
-our $VERSION = '0.02';
-
-my $_digits = '0123456789ABCDEFGHIJKLMNOPQRSTUVWZYX';
+our $VERSION = '0.03';
 
 sub decode_base36 {
-	require Math::BigInt;
-	use Math::BigInt qw(:constant);
-	my ($t, $i)  = 0;
-	foreach(split //, reverse uc shift) {
-		croak __PACKAGE__ ."::decode_base36 -- invalid base 36 digit: '$_'" unless index($_digits,$_) > 0;
-		$_ = ord($_) - 55 unless /\d/; # Assume that 'A' is 65
-		$t += $_ * (36 ** $i++);
+    my $base36 = uc( shift );
+    die 'Invalid base36 number' unless $base36 =~ m{[0-9A-Z]+};
+    
+	my ($result, $digit)  = ( 0, 0 );
+	for my $char (split( //, reverse $base36 )) {
+        my $value = $char =~ m{\d} ? $char : ord( $char ) - 55;
+		$result += $value * (36 ** $digit++);
 	}
-	return(substr($t,1));
+
+    return $result;
 }
 
 sub encode_base36 {
-	my $n = shift;
-	my $p = shift || 0;
-	croak __PACKAGE__ ."::encode_base36 -- non-nunmeric value: '$n'" unless $n =~/^\d+$/;
-	croak __PACKAGE__ ."::encode_base36 -- invalid padding length: '$p'" unless $p =~/^\d+$/;
-	my $s="";
-	return(0) if $n == 0;
-	while ( $n ) {
-		my $v = $n % 36;
-		if($v <= 9) {
-			$s .= $v;
-		} else {
-			$s .= chr(55 + $v); # Assume that 'A' is 65
-		}
-		$n = int $n / 36;
+    my( $number, $padlength ) = @_;
+    $padlength ||= 0;
+
+    die 'Invalid base10 number' if $number =~ m{\D};
+    die 'Invalid padding length' if $padlength =~ m{\D};
+
+	return 0  if $number == 0;
+
+	my $result = '';
+	while ( $number ) {
+		my $remainder = $number % 36;
+        $result .= $remainder <= 9 ? $remainder : chr( 55 + $remainder );
+		$number = int $number / 36;
 	}
-	return "0" x ($p - length($s)) . reverse($s);
+
+	return '0' x ( $padlength - length $result ) . reverse( $result );
 }
 
 1;
+
 __END__
 
 =head1 NAME
@@ -90,10 +83,18 @@ Accepts a base36 string and returns a Base10 string representation of the number
 
 =head1 AUTHOR
 
-Rune Henssel, <perl@henssel.dk>
+Rune Henssel E<lt>perl@henssel.dkE<gt>
 
-=head1 COPYRIGHT
+=head1 MAINTAINER 
 
-Copyright (c) 2002 Rune Henssel. All rights reserved. This program is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
+Brian Cassidy E<lt>bricas@cpan.orgE<gt>
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright 2002 by Rune Henssel
+Copyright 2007 by Brian Cassidy
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself. 
 
 =cut

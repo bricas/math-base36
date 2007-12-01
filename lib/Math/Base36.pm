@@ -10,7 +10,7 @@ use Math::BigInt qw(:constant);
 our %EXPORT_TAGS = ( 'all' => [ qw(encode_base36 decode_base36) ] );
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{ 'all' } } );
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 sub decode_base36 {
     my $base36 = uc( shift );
@@ -88,6 +88,7 @@ Brian Cassidy E<lt>bricas@cpan.orgE<gt>
 =head1 COPYRIGHT AND LICENSE
 
 Copyright 2002 by Rune Henssel
+
 Copyright 2007 by Brian Cassidy
 
 This library is free software; you can redistribute it and/or modify

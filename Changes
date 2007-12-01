@@ -1,5 +1,8 @@
 Revision history for Perl extension Math::Base36.
 
+0.04  Fri Nov 30 2007
+    - add perl version requirement of 5.6.0
+
 0.03  Fri Nov 30 2007
     - fix tests by using Math::BigInt (RT #15712)
     - fix return from decode_base36() (RT #18347, RT #15712)
@@ -7,9 +10,7 @@ Revision history for Perl extension Math::Base36.
     - dist cleanup
 
 0.02  Sun Feb 17 2002
-	- Fixed a dependency error.
+    - Fixed a dependency error.
 
 0.01  Mon Feb  4 2002
-	- base36_encode and base36_decode work, and can be exported.
-
-
+    - base36_encode and base36_decode work, and can be exported.

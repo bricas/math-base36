@@ -5,6 +5,7 @@ if ( -e 'MANIFEST.SKIP' ) {
 }
 
 name 'Math-Base36';
+perl_version '5.006';
 all_from 'lib/Math/Base36.pm';
 
 requires 'Math::BigInt';

@@ -1,5 +1,9 @@
 Revision history for Perl extension Math::Base36.
 
+0.05  Wed Dev 05 2007
+    - set Math::BigInt prereq version so a more recent version is
+      used w/ 5.6.x
+
 0.04  Fri Nov 30 2007
     - add perl version requirement of 5.6.0
 

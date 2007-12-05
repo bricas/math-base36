@@ -8,7 +8,7 @@ name 'Math-Base36';
 perl_version '5.006';
 all_from 'lib/Math/Base36.pm';
 
-requires 'Math::BigInt';
+requires 'Math::BigInt' => '1.60';
 
 test_requires 'Test::More';
 

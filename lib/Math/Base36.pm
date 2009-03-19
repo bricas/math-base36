@@ -89,7 +89,7 @@ Brian Cassidy E<lt>bricas@cpan.orgE<gt>
 
 Copyright 2002 by Rune Henssel
 
-Copyright 2007 by Brian Cassidy
+Copyright 2007-2009 by Brian Cassidy
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself. 

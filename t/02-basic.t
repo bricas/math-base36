@@ -1,4 +1,4 @@
-use Test::More tests => 5;
+use Test::More tests => 6;
 
 use strict;
 use warnings;
@@ -17,4 +17,7 @@ is( decode_base36( 'ZZZZZZZZZZZZZZZZZZZZZZZZZ' ),
     Math::BigInt->new( '808281277464764060643139600456536293375' ),
     'large number'
 );
+
+eval { decode_base36( '(INVALID)' ); };
+ok( $@, 'invalid base36 numbers throw errors' );
 

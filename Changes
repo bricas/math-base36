@@ -1,5 +1,8 @@
 Revision history for Perl extension Math::Base36.
 
+0.06  Thu Mar 18 2009
+    - fix regex for input validation in decode_base36() (RT #44414)
+
 0.05  Wed Dec 05 2007
     - set Math::BigInt prereq version so a more recent version is
       used w/ 5.6.x

@@ -1,5 +1,8 @@
 Revision history for Perl extension Math::Base36.
 
+0.07  Wed Nov 18 2009
+    - repackaged with a new version of Module::Install
+
 0.06  Thu Mar 18 2009
     - fix regex for input validation in decode_base36() (RT #44414)
 

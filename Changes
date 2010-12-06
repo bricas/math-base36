@@ -1,5 +1,8 @@
 Revision history for Perl extension Math::Base36.
 
+0.08  Mon Dec 06 2010
+    - don't short-circuit encoding '0' so it gets proper padding.
+
 0.07  Wed Nov 18 2009
     - repackaged with a new version of Module::Install
 

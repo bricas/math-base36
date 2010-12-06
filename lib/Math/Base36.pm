@@ -10,7 +10,7 @@ use Math::BigInt qw(:constant);
 our %EXPORT_TAGS = ( 'all' => [ qw(encode_base36 decode_base36) ] );
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{ 'all' } } );
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 sub decode_base36 {
     my $base36 = uc( shift );
@@ -27,12 +27,10 @@ sub decode_base36 {
 
 sub encode_base36 {
     my ( $number, $padlength ) = @_;
-    $padlength ||= 0;
+    $padlength ||= 1;
 
     die 'Invalid base10 number'  if $number    =~ m{\D};
     die 'Invalid padding length' if $padlength =~ m{\D};
-
-    return 0 if $number == 0;
 
     my $result = '';
     while ( $number ) {
@@ -70,7 +68,7 @@ It was created because of an article/challenge in "The Perl Review"
 =head2 encode_base36( $number, [$padlength] )
 
 Accepts a unsigned int and returns a Base36 string representation of the
-number. optionally zero-padded to $padlength.
+number. optionally zero-padded to C<$padlength>.
 
 =head2 decode_base36( $b36 )
 
@@ -89,7 +87,7 @@ Brian Cassidy E<lt>bricas@cpan.orgE<gt>
 
 Copyright 2002 by Rune Henssel
 
-Copyright 2007-2009 by Brian Cassidy
+Copyright 2007-2010 by Brian Cassidy
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself. 

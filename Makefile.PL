@@ -1,4 +1,4 @@
-use inc::Module::Install 0.91;
+use inc::Module::Install 1.00;
 
 if ( -e 'MANIFEST.SKIP' ) {
     system( 'pod2text lib/Math/Base36.pm > README' );
@@ -12,6 +12,6 @@ requires 'Math::BigInt' => '1.60';
 
 test_requires 'Test::More';
 
-repository "http://github.com/bricas/math-base36/tree/master";
+repository "http://github.com/bricas/math-base36";
 
 WriteAll;

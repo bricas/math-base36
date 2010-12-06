@@ -5,12 +5,12 @@ use warnings;
 
 use base qw( Exporter );
 
-use Math::BigInt qw(:constant);
+use Math::BigInt ();
 
 our %EXPORT_TAGS = ( 'all' => [ qw(encode_base36 decode_base36) ] );
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{ 'all' } } );
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 sub decode_base36 {
     my $base36 = uc( shift );
@@ -19,7 +19,7 @@ sub decode_base36 {
     my ( $result, $digit ) = ( 0, 0 );
     for my $char ( split( //, reverse $base36 ) ) {
         my $value = $char =~ m{\d} ? $char : ord( $char ) - 55;
-        $result += $value * ( 36**$digit++ );
+        $result += $value * Math::BigInt->new( 36 )->bpow( $digit++ );
     }
 
     return $result;

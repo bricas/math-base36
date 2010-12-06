@@ -1,5 +1,8 @@
 Revision history for Perl extension Math::Base36.
 
+0.09  Mon Dec 06 2010
+    - explicit use of of Math::BigInt to avoid confusing Devel::Cover
+
 0.08  Mon Dec 06 2010
     - don't short-circuit encoding '0' so it gets proper padding.
 

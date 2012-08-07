@@ -1,5 +1,8 @@
 Revision history for Perl extension Math::Base36.
 
+0.10  TO BE RELEASED
+    - Fix SYNOPSIS (RT #78790)
+
 0.09  Mon Dec 06 2010
     - explicit use of of Math::BigInt to avoid confusing Devel::Cover
 

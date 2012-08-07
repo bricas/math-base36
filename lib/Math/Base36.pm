@@ -10,7 +10,7 @@ use Math::BigInt ();
 our %EXPORT_TAGS = ( 'all' => [ qw(encode_base36 decode_base36) ] );
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{ 'all' } } );
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 sub decode_base36 {
     my $base36 = uc( shift );
@@ -54,8 +54,8 @@ Math::Base36 - Encoding and decoding of base36 strings
 
   use Math::Base36 ':all';
 
-  $b36 = encode_base36( $number );
-  $number = decode_base36( $b36, $padlength );
+  $b36 = encode_base36( $number, $padlength );
+  $number = decode_base36( $b36 );
 
 =head1 DESCRIPTION
 
@@ -87,7 +87,7 @@ Brian Cassidy E<lt>bricas@cpan.orgE<gt>
 
 Copyright 2002 by Rune Henssel
 
-Copyright 2007-2010 by Brian Cassidy
+Copyright 2007-2012 by Brian Cassidy
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself. 

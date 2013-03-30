@@ -1,5 +1,8 @@
 Revision history for Perl extension Math::Base36.
 
+0.12 2013-03-29
+ - make errors more descriptive (Chisel Wright)
+
 0.11 2013-03-14
  - repackaged
 

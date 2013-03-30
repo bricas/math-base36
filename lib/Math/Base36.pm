@@ -11,7 +11,7 @@ use Math::BigInt ();
 our %EXPORT_TAGS = ( 'all' => [ qw(encode_base36 decode_base36) ] );
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{ 'all' } } );
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 sub decode_base36 {
     my $base36 = uc( shift );

@@ -5,6 +5,7 @@ use warnings;
 
 use base qw( Exporter );
 
+use Carp 'croak';
 use Math::BigInt ();
 
 our %EXPORT_TAGS = ( 'all' => [ qw(encode_base36 decode_base36) ] );
@@ -14,7 +15,7 @@ our $VERSION = '0.11';
 
 sub decode_base36 {
     my $base36 = uc( shift );
-    die 'Invalid base36 number' if $base36 =~ m{[^0-9A-Z]};
+    croak "Invalid base36 number ($base36)" if $base36 =~ m{[^0-9A-Z]};
 
     my ( $result, $digit ) = ( 0, 0 );
     for my $char ( split( //, reverse $base36 ) ) {
@@ -29,8 +30,8 @@ sub encode_base36 {
     my ( $number, $padlength ) = @_;
     $padlength ||= 1;
 
-    die 'Invalid base10 number'  if $number    =~ m{\D};
-    die 'Invalid padding length' if $padlength =~ m{\D};
+    croak "Invalid base10 number ($number)"  if $number    =~ m{\D};
+    croak "Invalid padding length ($padlength)" if $padlength =~ m{\D};
 
     my $result = '';
     while ( $number ) {

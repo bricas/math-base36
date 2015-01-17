@@ -33,6 +33,7 @@ sub encode_base36 {
     croak "Invalid base10 number ($number)"  if $number    =~ m{\D};
     croak "Invalid padding length ($padlength)" if $padlength =~ m{\D};
 
+    $number = Math::BigInt->new( $number );
     my $result = '';
     while ( $number ) {
         my $remainder = $number % 36;

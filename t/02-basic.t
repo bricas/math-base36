@@ -1,4 +1,4 @@
-use Test::More tests => 33;
+use Test::More tests => 35;
 
 use strict;
 use warnings;
@@ -40,6 +40,14 @@ use Math::BigInt;
 
     is( decode_base36( $b36 ), $num, 'decode large number' );
     is( encode_base36( $num ), $b36, 'encode large number' );
+}
+
+{
+    my $num = '808281277464764060643139600456536293375';
+    my $b36 = 'ZZZZZZZZZZZZZZZZZZZZZZZZZ';
+
+    is( decode_base36( $b36 ), $num, 'decode large number (implicit bigint)' );
+    is( encode_base36( $num ), $b36, 'encode large number (implicit bigint)' );
 }
 
 {

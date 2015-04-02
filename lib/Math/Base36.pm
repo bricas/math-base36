@@ -41,7 +41,10 @@ sub encode_base36 {
         $number = int $number / 36;
     }
 
-    return '0' x ( $padlength - length $result ) . reverse( $result );
+    my $padding = $padlength - length $result;
+    my $return = reverse( $result );
+    $return = '0' x $padding . $return if $padding > 0;
+    return $return;
 }
 
 1;

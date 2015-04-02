@@ -1,5 +1,8 @@
 Revision history for Perl extension Math::Base36.
 
+0.14 TBD
+ - Avoid negative repeat count warnings generated from new perls (RT #103266) 
+
 0.13 2015-01-17
  - handle large base-10 numbers when encoding (GH #2)
 

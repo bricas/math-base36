@@ -1,6 +1,6 @@
 Revision history for Perl extension Math::Base36.
 
-0.14 TBD
+0.14 2015-04-02
  - Avoid negative repeat count warnings generated from new perls (RT #103266) 
 
 0.13 2015-01-17

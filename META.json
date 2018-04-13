@@ -16,7 +16,8 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "0"
+            "ExtUtils::MakeMaker" : "0",
+            "perl" : "5.006"
          }
       },
       "develop" : {
@@ -28,13 +29,15 @@
       },
       "runtime" : {
          "requires" : {
-            "Math::BigInt" : "1.60"
+            "Math::BigInt" : "1.60",
+            "perl" : "5.006"
          }
       },
       "test" : {
          "requires" : {
             "Test::Exception" : "0",
-            "Test::More" : "0.98"
+            "Test::More" : "0.98",
+            "perl" : "5.006"
          }
       }
    },

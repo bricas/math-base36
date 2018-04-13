@@ -1,0 +1,39 @@
+{
+   "resources" : {
+      "repository" : "http://github.com/bricas/math-base36",
+      "license" : "http://dev.perl.org/licenses/"
+   },
+   "distribution_type" : "module",
+   "version" : "0.14",
+   "author" : [
+      "Rune Henssel <perl@henssel.dk>"
+   ],
+   "build_requires" : {
+      "ExtUtils::MakeMaker" : 6.59,
+      "Test::More" : 0,
+      "Test::Exception" : 0
+   },
+   "abstract" : "Encoding and decoding of base36 strings",
+   "configure_requires" : {
+      "ExtUtils::MakeMaker" : 6.59
+   },
+   "no_index" : {
+      "directory" : [
+         "inc",
+         "t"
+      ]
+   },
+   "dynamic_config" : 1,
+   "meta-spec" : {
+      "url" : "http://module-build.sourceforge.net/META-spec-v1.4.html",
+      "version" : 1.4
+   },
+   "license" : "perl",
+   "name" : "Math-Base36",
+   "requires" : {
+      "Math::BigInt" : "1.60",
+      "perl" : "5.6.0"
+   },
+   "generated_by" : "Module::Install version 1.19 using Module::Install::JSONMETA version 7.001"
+}
+

@@ -48,6 +48,12 @@
       }
    },
    "version" : "0.15",
+   "x_contributors" : [
+      "Brian Cassidy <brian.cassidy@gmail.com>",
+      "Brian Cassidy <bricas@cpan.org>",
+      "Chisel <chisel@chizography.net>",
+      "Zak B. Elep <zakame@zakame.net>"
+   ],
    "x_serialization_backend" : "Cpanel::JSON::XS version 4.02"
 }
 

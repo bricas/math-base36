@@ -1,4 +1,5 @@
 package Math::Base36;
+# VERSION
 
 use strict;
 use warnings;
@@ -10,8 +11,6 @@ use Math::BigInt ();
 
 our %EXPORT_TAGS = ( 'all' => [ qw(encode_base36 decode_base36) ] );
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{ 'all' } } );
-
-our $VERSION = '0.14';
 
 sub decode_base36 {
     my $base36 = uc( shift );

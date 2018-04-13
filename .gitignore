@@ -7,8 +7,9 @@ blib
 inc
 pm_to_blib
 MANIFEST*
-!MANIFEST.SKIP
 *~
 *.bak
 README
 *.tar.gz
+.build
+Math-Base36-*

@@ -1,5 +1,8 @@
 Revision history for Perl extension Math::Base36.
 
+{{$NEXT}}
+ - Switch module authoring tool from Module::Install to Dist::Zilla
+
 0.14 2015-04-02
  - Avoid negative repeat count warnings generated from new perls (RT #103266) 
 
